@@ -20024,7 +20024,8 @@
         }
       } finally {
         if (_didIteratorError) {
-          throw _iteratorError;
+          // Changed by Fliplet to make it work on IE11
+          // throw _iteratorError;
         }
       }
     }
