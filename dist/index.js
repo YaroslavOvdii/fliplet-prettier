@@ -34768,6 +34768,20 @@ var htmlElementAttributes = /*#__PURE__*/Object.freeze({
 
 var htmlElementAttributes$1 = getCjsExportFromNamespace(htmlElementAttributes);
 
+function _typeof$1(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof$1 = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof$1 = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof$1(obj);
+}
+
 var CSS_DISPLAY_TAGS = json$1.CSS_DISPLAY_TAGS,
     CSS_DISPLAY_DEFAULT = json$1.CSS_DISPLAY_DEFAULT,
     CSS_WHITE_SPACE_TAGS = json$1.CSS_WHITE_SPACE_TAGS,
@@ -34778,8 +34792,6 @@ var HTML_ELEMENT_ATTRIBUTES = mapObject(htmlElementAttributes$1, arrayToMap);
 function arrayToMap(array) {
   var map = Object.create(null);
   var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
 
   try {
     for (var _iterator = array[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
@@ -34787,17 +34799,12 @@ function arrayToMap(array) {
       map[value] = true;
     }
   } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
   } finally {
     try {
       if (!_iteratorNormalCompletion && _iterator.return != null) {
         _iterator.return();
       }
     } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
     }
   }
 
@@ -35115,7 +35122,7 @@ function countParents(path) {
   for (var i = path.stack.length - 1; i >= 0; i--) {
     var value = path.stack[i];
 
-    if (value && typeof value === "object" && !Array.isArray(value) && predicate(value)) {
+    if (value && _typeof$1(value) === "object" && !Array.isArray(value) && predicate(value)) {
       counter++;
     }
   }
@@ -35280,37 +35287,37 @@ function unescapeQuoteEntities(text) {
 }
 
 var utils$6 = {
-  HTML_ELEMENT_ATTRIBUTES,
-  HTML_TAGS,
-  canHaveInterpolation,
-  countChars,
-  countParents,
-  dedentString,
-  forceBreakChildren,
-  forceBreakContent,
-  forceNextEmptyLine,
-  getLastDescendant,
-  getNodeCssStyleDisplay,
-  getNodeCssStyleWhiteSpace,
-  getPrettierIgnoreAttributeCommentData,
+  HTML_ELEMENT_ATTRIBUTES: HTML_ELEMENT_ATTRIBUTES,
+  HTML_TAGS: HTML_TAGS,
+  canHaveInterpolation: canHaveInterpolation,
+  countChars: countChars,
+  countParents: countParents,
+  dedentString: dedentString,
+  forceBreakChildren: forceBreakChildren,
+  forceBreakContent: forceBreakContent,
+  forceNextEmptyLine: forceNextEmptyLine,
+  getLastDescendant: getLastDescendant,
+  getNodeCssStyleDisplay: getNodeCssStyleDisplay,
+  getNodeCssStyleWhiteSpace: getNodeCssStyleWhiteSpace,
+  getPrettierIgnoreAttributeCommentData: getPrettierIgnoreAttributeCommentData,
   hasPrettierIgnore: hasPrettierIgnore$3,
   identity: identity$2,
-  inferScriptParser,
-  isDanglingSpaceSensitiveNode,
-  isFrontMatterNode,
-  isIndentationSensitiveNode,
-  isLeadingSpaceSensitiveNode,
-  isPreLikeNode,
-  isScriptLikeTag,
-  isTextLikeNode,
-  isTrailingSpaceSensitiveNode,
-  isWhitespaceSensitiveNode,
+  inferScriptParser: inferScriptParser,
+  isDanglingSpaceSensitiveNode: isDanglingSpaceSensitiveNode,
+  isFrontMatterNode: isFrontMatterNode,
+  isIndentationSensitiveNode: isIndentationSensitiveNode,
+  isLeadingSpaceSensitiveNode: isLeadingSpaceSensitiveNode,
+  isPreLikeNode: isPreLikeNode,
+  isScriptLikeTag: isScriptLikeTag,
+  isTextLikeNode: isTextLikeNode,
+  isTrailingSpaceSensitiveNode: isTrailingSpaceSensitiveNode,
+  isWhitespaceSensitiveNode: isWhitespaceSensitiveNode,
   normalizeParts: normalizeParts$1,
-  preferHardlineAsLeadingSpaces,
-  preferHardlineAsTrailingSpaces,
-  shouldNotPrintClosingTag,
-  shouldPreserveContent,
-  unescapeQuoteEntities
+  preferHardlineAsLeadingSpaces: preferHardlineAsLeadingSpaces,
+  preferHardlineAsTrailingSpaces: preferHardlineAsTrailingSpaces,
+  shouldNotPrintClosingTag: shouldNotPrintClosingTag,
+  shouldPreserveContent: shouldPreserveContent,
+  unescapeQuoteEntities: unescapeQuoteEntities
 };
 
 var canHaveInterpolation$1 = utils$6.canHaveInterpolation,
@@ -45229,6 +45236,6 @@ var src$1 = {
   }
 };
 
-var prettier = src$1;
+var flipletPrettier = src$1;
 
-module.exports = prettier;
+module.exports = flipletPrettier;

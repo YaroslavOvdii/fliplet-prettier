@@ -19996,6 +19996,20 @@
 
   var htmlElementAttributes$1 = getCjsExportFromNamespace(htmlElementAttributes);
 
+  function _typeof$2(obj) {
+    if (typeof Symbol === "function" && _typeof(Symbol.iterator) === "symbol") {
+      _typeof$2 = function _typeof$1(obj) {
+        return _typeof(obj);
+      };
+    } else {
+      _typeof$2 = function _typeof$1(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof(obj);
+      };
+    }
+
+    return _typeof$2(obj);
+  }
+
   var CSS_DISPLAY_TAGS = json.CSS_DISPLAY_TAGS,
       CSS_DISPLAY_DEFAULT = json.CSS_DISPLAY_DEFAULT,
       CSS_WHITE_SPACE_TAGS = json.CSS_WHITE_SPACE_TAGS,
@@ -20006,8 +20020,6 @@
   function arrayToMap(array) {
     var map = Object.create(null);
     var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
 
     try {
       for (var _iterator = array[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
@@ -20015,18 +20027,12 @@
         map[value] = true;
       }
     } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
     } finally {
       try {
         if (!_iteratorNormalCompletion && _iterator.return != null) {
           _iterator.return();
         }
       } finally {
-        if (_didIteratorError) {
-          // Changed by Fliplet to make it work on IE11
-          // throw _iteratorError;
-        }
       }
     }
 
@@ -20344,7 +20350,7 @@
     for (var i = path.stack.length - 1; i >= 0; i--) {
       var value = path.stack[i];
 
-      if (value && _typeof(value) === "object" && !Array.isArray(value) && predicate(value)) {
+      if (value && _typeof$2(value) === "object" && !Array.isArray(value) && predicate(value)) {
         counter++;
       }
     }
